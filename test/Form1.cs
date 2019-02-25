@@ -68,7 +68,7 @@ namespace test
                 ChipType tp = nig.getModuleType();
                 Devinfo di = nig.getModuleInfo();
                 byte vol = nig.getSSGVolume();
-                ushort clock = nig.getPLLClock();
+                uint clock = nig.getPLLClock();
             }
         }
 
