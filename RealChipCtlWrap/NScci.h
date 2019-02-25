@@ -10,7 +10,7 @@ using namespace System;
 namespace NScci {
 
 	public ref class NSCCI_INTERFACE_INFO
-	{
+	{ 
 
 	public:
 		NSCCI_INTERFACE_INFO();
