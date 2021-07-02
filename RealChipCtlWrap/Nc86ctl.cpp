@@ -34,7 +34,8 @@ Nc86ctl::Nc86ctl::~Nc86ctl()
 
 Nc86ctl::Nc86ctl::!Nc86ctl()
 {
-		::FreeLibrary(hC86ctl);
+	hC86ctl = NULL;
+	::FreeLibrary(hC86ctl);
 }
 
 int Nc86ctl::Nc86ctl::initialize()

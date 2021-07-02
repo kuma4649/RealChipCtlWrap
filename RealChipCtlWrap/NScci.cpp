@@ -47,6 +47,7 @@ NScci::NScci::~NScci()
 
 NScci::NScci::!NScci()
 {
+	hScci = NULL;
 	if (SoundInterfaceManager_ == NULL) {
 		return;
 	}
