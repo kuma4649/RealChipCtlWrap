@@ -24,7 +24,7 @@ namespace test
 
         private void Form1_Shown(object sender, EventArgs e)
         {
-            for (int i = 0; i < 2; i++)
+            for (int i = 0; i < 1; i++)
             {
                 try
                 {
@@ -45,25 +45,35 @@ namespace test
                     }
                     else
                     {
-                        MsgDisp("SCCI:getInterface 開始");
-                        NSoundInterface nsif = scci.NSoundInterfaceManager_.getInterface(0);
-                        MsgDisp("SCCI:getInterface 完了");
+                        for (int j = 0; j < n; j++)
+                        {
+                            MsgDisp(string.Format("SCCI:====================== Interface {0}", j));
+                            MsgDisp("SCCI:getInterface 開始");
+                            NSoundInterface nsif = scci.NSoundInterfaceManager_.getInterface(j);
+                            MsgDisp("SCCI:getInterface 完了");
 
-                        MsgDisp("SCCI:getSoundChipCount 開始");
-                        int c = nsif.getSoundChipCount();
-                        MsgDisp("SCCI:getSoundChipCount 完了");
+                            MsgDisp("SCCI:getSoundChipCount 開始");
+                            int c = nsif.getSoundChipCount();
+                            MsgDisp("SCCI:getSoundChipCount 完了");
 
-                        MsgDisp("SCCI:getSoundChip 開始");
-                        NSoundChip nsc = nsif.getSoundChip(0);
-                        MsgDisp("SCCI:getSoundChip 完了");
+                            for (int k = 0; k < c; k++)
+                            {
+                                MsgDisp("SCCI:------------------- Chip Information");
 
-                        MsgDisp("SCCI:getSoundChipInfo 開始");
-                        NSCCI_SOUND_CHIP_INFO nssci = nsc.getSoundChipInfo();
-                        MsgDisp("SCCI:getSoundChipInfo 完了");
+                                MsgDisp("SCCI:getSoundChip 開始");
+                                NSoundChip nsc = nsif.getSoundChip(k);
+                                MsgDisp("SCCI:getSoundChip 完了");
 
-                        MsgDisp("SCCI:cSoundChipName 開始");
-                        string chipName = nssci.cSoundChipName;
-                        MsgDisp(string.Format("SCCI:cSoundChipName 完了 {0}", chipName));
+                                MsgDisp("SCCI:getSoundChipInfo 開始");
+                                NSCCI_SOUND_CHIP_INFO nssci = nsc.getSoundChipInfo();
+                                MsgDisp("SCCI:getSoundChipInfo 完了");
+
+                                MsgDisp(string.Format("SCCI:cSoundChipName {0}", nssci.cSoundChipName));
+                                MsgDisp(string.Format("SCCI:dClock {0}", nssci.dClock));
+                                MsgDisp(string.Format("SCCI:iSoundChip {0}", nssci.iSoundChip));
+                                MsgDisp(string.Format("SCCI:bIsUsed {0}", nssci.bIsUsed));
+                            }
+                        }
 
                         if (scci != null)
                         {
