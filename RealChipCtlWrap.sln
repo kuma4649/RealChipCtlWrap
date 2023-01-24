@@ -7,6 +7,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "RealChipCtlWrap", "RealChip
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "test", "test\test.csproj", "{A35BC96F-55F3-44DA-BB80-B22C22BE6125}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "RealChipCtlWrap64", "RealChipCtlWrap64\RealChipCtlWrap64.vcxproj", "{63282916-BFD5-4BF4-92A9-9AAEEBEDECCB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -31,6 +33,13 @@ Global
 		{A35BC96F-55F3-44DA-BB80-B22C22BE6125}.Release|x64.Build.0 = Release|x64
 		{A35BC96F-55F3-44DA-BB80-B22C22BE6125}.Release|x86.ActiveCfg = Release|x86
 		{A35BC96F-55F3-44DA-BB80-B22C22BE6125}.Release|x86.Build.0 = Release|x86
+		{63282916-BFD5-4BF4-92A9-9AAEEBEDECCB}.Debug|x64.ActiveCfg = Debug|x64
+		{63282916-BFD5-4BF4-92A9-9AAEEBEDECCB}.Debug|x64.Build.0 = Debug|x64
+		{63282916-BFD5-4BF4-92A9-9AAEEBEDECCB}.Debug|x86.ActiveCfg = Debug|x64
+		{63282916-BFD5-4BF4-92A9-9AAEEBEDECCB}.Debug|x86.Build.0 = Debug|x64
+		{63282916-BFD5-4BF4-92A9-9AAEEBEDECCB}.Release|x64.ActiveCfg = Release|x64
+		{63282916-BFD5-4BF4-92A9-9AAEEBEDECCB}.Release|x64.Build.0 = Release|x64
+		{63282916-BFD5-4BF4-92A9-9AAEEBEDECCB}.Release|x86.ActiveCfg = Release|x64
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
