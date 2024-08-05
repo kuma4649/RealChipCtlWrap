@@ -15,7 +15,7 @@ NScci::NScci::NScci()
 {
 
 	if (hScci == NULL) {
-		hScci = LoadLibraryA("scci.dll");
+		hScci = LoadLibraryA("scci2.dll");
 	}
 
 	if (hScci == NULL) {
