@@ -123,7 +123,12 @@ namespace test
                         MsgDisp("c86ctl:reset 開始");
                         nirc.reset();
                         MsgDisp("c86ctl:reset 完了");
-
+                        MsgDisp("c86ctl:out 開始");
+                        nirc.@out(0, 0);
+                        MsgDisp("c86ctl:out 完了");
+                        MsgDisp("c86ctl:directOut 開始");
+                        nirc.directOut(0, 0);
+                        MsgDisp("c86ctl:directOut 完了");
                         MsgDisp("c86ctl:QueryInterface 開始");
                         NIGimic2 nig = nirc.QueryInterface();
                         MsgDisp("c86ctl:QueryInterface 完了");

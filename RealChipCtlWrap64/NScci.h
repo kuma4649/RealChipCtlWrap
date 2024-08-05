@@ -1,7 +1,7 @@
 // NScci.h
 
 #pragma once
-#include "scci.h"
+#include "scci2.h"
 #include <msclr\marshal.h>
 using namespace msclr::interop;
 
@@ -17,7 +17,7 @@ namespace NScci {
 		~NSCCI_INTERFACE_INFO();
 		!NSCCI_INTERFACE_INFO();
 
-		SCCI_INTERFACE_INFO* SCCI_INTERFACE_INFO_;
+		SCCI2_INTERFACE_INFO* SCCI_INTERFACE_INFO_;
 
 		// Interface Name
 		property String^  cInterfaceName {
@@ -42,7 +42,7 @@ namespace NScci {
 		~NSCCI_SOUND_CHIP_INFO();
 		!NSCCI_SOUND_CHIP_INFO();
 
-		SCCI_SOUND_CHIP_INFO* SCCI_SOUND_CHIP_INFO_;
+		SCCI2_SOUND_CHIP_INFO* SCCI_SOUND_CHIP_INFO_;
 
 		// Sound Chip Name
 		property String^ cSoundChipName {
@@ -117,7 +117,7 @@ namespace NScci {
 		~NSoundInterfaceManager();
 		!NSoundInterfaceManager();
 
-		SoundInterfaceManager* SoundInterfaceManager_;
+		Scci2SoundInterfaceManager* SoundInterfaceManager_;
 
 		// ---------- LOW LEVEL APIs ----------
 		// get interface count
@@ -187,7 +187,7 @@ namespace NScci {
 		~NSoundInterface();
 		!NSoundInterface();
 
-		SoundInterface* SoundInterface_;
+		Scci2SoundInterface* SoundInterface_;
 
 		// support low level API check
 		Boolean isSupportLowLevelApi();
@@ -220,7 +220,7 @@ namespace NScci {
 		~NSoundChip();
 		!NSoundChip();
 
-		SoundChip* SoundChip_;
+		Scci2SoundChip* SoundChip_;
 
 		// get sound chip information
 		NSCCI_SOUND_CHIP_INFO^ getSoundChipInfo();
@@ -242,9 +242,9 @@ namespace NScci {
 
 	public ref class NScci
 	{
-		SoundInterfaceManager* SoundInterfaceManager_;
-		SoundInterface* SoundInterface_;
-		SoundChip* SoundChip_;
+		Scci2SoundInterfaceManager* SoundInterfaceManager_;
+		Scci2SoundInterface* SoundInterface_;
+		Scci2SoundChip* SoundChip_;
 
 	public:
 		NScci();

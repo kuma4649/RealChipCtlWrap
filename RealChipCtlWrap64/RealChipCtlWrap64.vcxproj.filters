@@ -24,9 +24,6 @@
     <ClInclude Include="NScci.h">
       <Filter>ヘッダー ファイル</Filter>
     </ClInclude>
-    <ClInclude Include="scci.h">
-      <Filter>ヘッダー ファイル</Filter>
-    </ClInclude>
     <ClInclude Include="c86ctl.h">
       <Filter>ヘッダー ファイル</Filter>
     </ClInclude>
@@ -37,6 +34,9 @@
       <Filter>ヘッダー ファイル</Filter>
     </ClInclude>
     <ClInclude Include="targetver.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="scci2.h">
       <Filter>ヘッダー ファイル</Filter>
     </ClInclude>
   </ItemGroup>
@@ -55,10 +55,7 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="c86ctl.dll" />
-    <None Include="c86ctl.ini" />
-    <None Include="scci.dll" />
-    <None Include="scci.ini" />
-    <None Include="scciconfig.exe" />
+    <CopyFileToFolders Include="c86ctl.dll" />
+    <CopyFileToFolders Include="c86ctl.ini" />
   </ItemGroup>
 </Project>

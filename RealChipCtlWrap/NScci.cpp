@@ -118,7 +118,7 @@ int NScci::NSoundInterfaceManager::getInterfaceCount()
 NScci::NSCCI_INTERFACE_INFO^ NScci::NSoundInterfaceManager::getInterfaceInfo(int iInterfaceNo)
 {
 	if (SoundInterfaceManager_ == nullptr) return nullptr;
-	SCCI_INTERFACE_INFO* a = SoundInterfaceManager_->getInterfaceInfo(iInterfaceNo);
+	SCCI2_INTERFACE_INFO* a = SoundInterfaceManager_->getInterfaceInfo(iInterfaceNo);
 
 	NSCCI_INTERFACE_INFO^ info = gcnew NSCCI_INTERFACE_INFO();
 	info->SCCI_INTERFACE_INFO_ = a;
@@ -129,7 +129,7 @@ NScci::NSCCI_INTERFACE_INFO^ NScci::NSoundInterfaceManager::getInterfaceInfo(int
 NScci::NSoundInterface^ NScci::NSoundInterfaceManager::getInterface(int iInterfaceNo)
 {
 	if (SoundInterfaceManager_ == nullptr) return nullptr;
-	SoundInterface* si = SoundInterfaceManager_->getInterface(iInterfaceNo);
+	Scci2SoundInterface* si = SoundInterfaceManager_->getInterface(iInterfaceNo);
 
 	NSoundInterface^ nsi = gcnew NSoundInterface();
 	nsi->SoundInterface_ = si;
@@ -155,7 +155,7 @@ NScci::NSoundChip^ NScci::NSoundInterfaceManager::getSoundChip(int iSoundChipTyp
 {
 	if (SoundInterfaceManager_ == nullptr) return nullptr;
 
-	SoundChip* a = SoundInterfaceManager_->getSoundChip(iSoundChipType, dClock);
+	Scci2SoundChip* a = SoundInterfaceManager_->getSoundChip(iSoundChipType, dClock);
 
 	NSoundChip^ chip = gcnew NSoundChip();
 	chip->SoundChip_ = a;
@@ -268,13 +268,13 @@ void NScci::NSoundInterfaceManager::clearBuff()
 void NScci::NSoundInterfaceManager::setAcquisitionMode(int iMode)
 {
 	if (SoundInterfaceManager_ == nullptr) return;
-	SoundInterfaceManager_->setAcquisitionMode(iMode);
+	SoundInterfaceManager_->setClockRangeMode(iMode);
 }
 
 void NScci::NSoundInterfaceManager::setAcquisitionModeClockRenge(long dClock)
 {
 	if (SoundInterfaceManager_ == nullptr) return;
-	SoundInterfaceManager_->setAcquisitionModeClockRenge(dClock);
+	SoundInterfaceManager_->setClockRangeModeRenge(dClock);
 }
 
 bool NScci::NSoundInterfaceManager::setCommandBuffetSize(long dBuffSize)
@@ -367,7 +367,7 @@ long NScci::NSoundInterface::getSoundChipCount()
 
 NScci::NSoundChip^ NScci::NSoundInterface::getSoundChip(long iInterfaceNo)
 {
-	SoundChip* sc = SoundInterface_->getSoundChip(iInterfaceNo);
+	Scci2SoundChip* sc = SoundInterface_->getSoundChip(iInterfaceNo);
 	NSoundChip^ nsc = gcnew NSoundChip();
 	nsc->SoundChip_ = sc;
 
@@ -391,7 +391,7 @@ NScci::NSoundChip::!NSoundChip()
 
 NScci::NSCCI_SOUND_CHIP_INFO^ NScci::NSoundChip::getSoundChipInfo()
 {
-	SCCI_SOUND_CHIP_INFO* ssci = SoundChip_->getSoundChipInfo();
+	SCCI2_SOUND_CHIP_INFO* ssci = SoundChip_->getSoundChipInfo();
 
 	NSCCI_SOUND_CHIP_INFO^ nssci= gcnew NSCCI_SOUND_CHIP_INFO();
 	nssci->SCCI_SOUND_CHIP_INFO_ = ssci;

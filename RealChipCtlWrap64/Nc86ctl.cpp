@@ -54,7 +54,7 @@ Nc86ctl::NIRealChip^ Nc86ctl::Nc86ctl::getChipInterface(int id)
 		throw gcnew Exception();
 	}
 
-	c86ctl::IRealChip * pRC;
+	c86ctl::IRealChip3 * pRC;
 	pChipBase->getChipInterface(id, c86ctl::IID_IRealChip, (void**)&pRC);
 	if (pRC == nullptr) {
 		return nullptr;
@@ -95,6 +95,11 @@ void Nc86ctl::NIRealChip::reset()
 void Nc86ctl::NIRealChip::out(UInt16 adr,byte data)
 {
 	pRC->out(adr, data);
+}
+
+void Nc86ctl::NIRealChip::directOut(UInt16 adr, byte data)
+{
+	pRC->directOut(adr, data);
 }
 
 byte Nc86ctl::NIRealChip::in(UInt16 adr)

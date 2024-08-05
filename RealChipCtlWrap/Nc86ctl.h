@@ -71,9 +71,10 @@ namespace Nc86ctl {
 		~NIRealChip();
 		!NIRealChip();
 
-		c86ctl::IRealChip* pRC;
+		c86ctl::IRealChip3* pRC;
 		void reset();
 		void out(UInt16, byte);
+		void directOut(UInt16, byte);
 		byte in(UInt16);
 		NIGimic2^ QueryInterface();
 
